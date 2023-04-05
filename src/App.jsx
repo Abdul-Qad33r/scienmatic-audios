@@ -1,13 +1,7 @@
-import './App.css'
-import { HamBurger } from './assets/constant'
+import "./App.css";
 
 function App() {
-
-  return (
-    <div className="App">
-      check <HamBurger />
-    </div>
-  )
+  return <div className="App">adwd</div>;
 }
 
-export default App
+export default App;

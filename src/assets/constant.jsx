@@ -1,70 +1,94 @@
-// Side-Bar-Menu
+export const Background = "./images/background-tile.webp";
+
+// Navbar
+export const LogoImage = "./images/monstercat-logo.webp";
+import { RxHamburgerMenu } from "react-icons/rx";
+export const HamBurger = RxHamburgerMenu;
+
 import { FaInstagramSquare, FaFacebook } from "react-icons/fa";
 import { SiTiktok, SiPlayerfm } from "react-icons/si";
 import { BsTwitter, BsTwitch } from "react-icons/bs";
 import { RiDiscordFill } from "react-icons/ri";
-import { RxHamburgerMenu } from "react-icons/rx";
-export const Instagram = FaInstagramSquare;
-export const TikTok = SiTiktok;
-export const Twitter = BsTwitter;
-export const Twitch = BsTwitch;
-export const Facebook = FaFacebook;
-export const Discord = RiDiscordFill;
-export const Player = SiPlayerfm;
-export const HamBurger = RxHamburgerMenu;
-
-
-export const MenuList = [
-  "NAAT",
-  (Naat = ["OUR NAAT", "INSTINCT", "UNCAGED", "SILK"]),
-  "ARTISTS",
-  "ABOUT",
-  (About = [
-    "ABOUT MONSTERCAT",
-    "DIVERSITY & INCLUSION",
-    "CODE OF ETHICS",
-    "CONTACT US",
-  ]),
-  "NEWS",
-  "EVENTS",
-  (Events = ["MONSTERCAT EVENTS", "UPCOMING EVENTS"]),
-  "PROGRAMMING",
-  (Programming = [
-    "MonstercatTV",
-    "CALL OF THE WILD",
-    "SILK SHOWCASE",
-    "UPCOMMING SHOWS",
-  ]),
-  "GOLD",
-  "PARTNERS",
-  "PRESS",
+export const SocialMediaIcons = [
+  <FaInstagramSquare />,
+  <SiTiktok />,
+  <BsTwitter />,
+  <BsTwitch />,
+  <FaFacebook />,
+  <RiDiscordFill />,
+  <SiPlayerfm />,
 ];
 
-export const MUSIC = ["OUR MUSIC", "INSTINCT", "UNCAGED", "SILK"];
-export const ABOUT = [
-  "ABOUT MONSTERCAT",
-  "DIVERSITY & INCLUSION",
-  "CODE OF ETHICS",
-  "ENVIRONMENTAL",
-  "CONTACT US",
-];
-export const EVENTS = ["MONSTERCAT EVENTS EXPERIENCE", "UPCOMING EVENTS"];
-export const PROGRAMMING = [
-  "MonstercatTV",
-  "CALL OF THE WILD",
-  "SILK SHOWCASE",
-  "UPCOMING SHOWS",
+import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from "react-icons/md";
+export const Arrows = {
+  up: <MdOutlineArrowDropUp />,
+  down: <MdOutlineArrowDropDown />,
+};
+
+export const SideMenu = [
+  { title: "music", submenu: ["our music", "instinct", "uncaged", "silk"] },
+  { title: "artist" },
+  {
+    title: "about",
+    submenu: [
+      "about monstercat",
+      "diversity & inclusion",
+      "code of ethics",
+      "environmental",
+      "contact us",
+    ],
+  },
+  { title: "news" },
+  {
+    title: "events",
+    submenu: ["MONSTERCAT EVENTS EXPERIENCE", "UPCOMING EVENTS"],
+  },
+  {
+    title: "PROGRAMMING",
+    submenu: [
+      "MonstercatTV",
+      "CALL OF THE WILD",
+      "SILK SHOWCASE",
+      "UPCOMING SHOWS",
+    ],
+  },
+  { title: "GOLD" },
+  { title: "PARTNERS" },
+  { title: "PRESS" },
+  { title: "PLAYER" },
+  { title: "SHOP" },
+  { title: "LOST CIVILIZATION" },
 ];
 
-// Header-image
-export const HeaderImage =
-  "https://cdx.monstercat.com?encoding=webp&url=https%3A%2F%2Fwww.monstercat.com%2Frelease%2FMCLP017%2Fcover%3F2ee434f2-4499-4c30-a937-4aec2b4ac1fc&width=1024https://cdx.monstercat.com?encoding=webp&url=https%3A%2F%2Fwww.monstercat.com%2Frelease%2FMCLP017%2Fcover%3F2ee434f2-4499-4c30-a937-4aec2b4ac1fc&width=1024";
+// Header
+
+export const HeaderImages = {
+  jpeg: "./images/cover.jpeg",
+  webpNormal: "./images/image.webp",
+  webpHD: "./images/image (1).webp",
+};
+
+export const Audios = [
+  { location: "Assubhu Bada - Naat.mp3" },
+  { location: "Ban k sayal - Naat.mp3" },
+  { location: "Bharr do Jholi-Naat.mp3" },
+  { location: "Ek Tera Ishra Ho Aur Asan Ho Manzil .mp3" },
+  { location: "Madina Sharif Naat.mp3" },
+  { location: "Saunadi Arabic Naat.mp3" },
+  { location: "Subhanallah Walhamdulillah - Naat .mp3" },
+  { location: "Tajdar E Haram - Atif.mp3" },
+  { location: "Tajdar-e-Haram - Aatif.mp3" },
+  { location: "Tajdare Haram Naat.mp3" },
+  { location: "Wal khat U Hussini Naat sharif.mp3" },
+  { location: "Ye Duniya Chor Di Humne.mp3" },
+];
+
 export const BodyVideo = "https://www.youtube.com/watch?v=STpHs6Ye4NM";
 
-// Body-center
-export { NaatListCenter } from "./NaatListCenter";
-
 import { BsShare } from "react-icons/bs";
-import { HiOutlinePlay } from "react-icons/hi";
-export const Share = BsShare;
-export const Play = HiOutlinePlay;
+import { HiOutlinePlay, HiOutlinePause } from "react-icons/hi";
+export const AudioIcons = {
+  share: <BsShare />,
+  play: <HiOutlinePlay />,
+  pause: <HiOutlinePause />,
+};
