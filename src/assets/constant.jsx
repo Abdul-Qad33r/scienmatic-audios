@@ -1,7 +1,7 @@
-export const Background = "./images/background-tile.webp";
+export const Background = "../../public/images/background-tile.webp";
 
 // Navbar
-export const LogoImage = "./images/monstercat-logo.webp";
+export const LogoImage = "../../public/images/monstercat-logo.webp";
 import { RxHamburgerMenu } from "react-icons/rx";
 export const HamBurger = RxHamburgerMenu;
 
@@ -63,24 +63,30 @@ export const SideMenu = [
 // Header
 
 export const HeaderImages = {
-  jpeg: "./images/cover.jpeg",
-  webpNormal: "./images/image.webp",
-  webpHD: "./images/image (1).webp",
+  jpeg: "../../public/images/cover.jpeg",
+  webpNormal: "../../public/images/image.webp",
+  webpHD: "../../public/images/image (1).webp",
 };
 
 export const Audios = [
-  { location: "Assubhu Bada - Naat.mp3" },
-  { location: "Ban k sayal - Naat.mp3" },
-  { location: "Bharr do Jholi-Naat.mp3" },
-  { location: "Ek Tera Ishra Ho Aur Asan Ho Manzil .mp3" },
-  { location: "Madina Sharif Naat.mp3" },
-  { location: "Saunadi Arabic Naat.mp3" },
-  { location: "Subhanallah Walhamdulillah - Naat .mp3" },
-  { location: "Tajdar E Haram - Atif.mp3" },
-  { location: "Tajdar-e-Haram - Aatif.mp3" },
-  { location: "Tajdare Haram Naat.mp3" },
-  { location: "Wal khat U Hussini Naat sharif.mp3" },
-  { location: "Ye Duniya Chor Di Humne.mp3" },
+  { location: "../../public/audios/Assubhu Bada - Naat.mp3" },
+  { location: "../../public/audios/Ban k sayal - Naat.mp3" },
+  { location: "../../public/audios/Bharr do Jholi-Naat.mp3" },
+  {
+    location: "../../public/audios/Ek Tera Ishra Ho Aur Asan Ho Manzil .mp3",
+  },
+  { location: "../../public/audios/Madina Sharif Naat.mp3" },
+  { location: "../../public/audios/Saunadi Arabic Naat.mp3" },
+  {
+    location: "../../public/audios/Subhanallah Walhamdulillah - Naat .mp3",
+  },
+  { location: "../../public/audios/Tajdar E Haram - Atif.mp3" },
+  { location: "../../public/audios/Tajdar-e-Haram - Aatif.mp3" },
+  { location: "../../public/audios/Tajdare Haram Naat.mp3" },
+  {
+    location: "../../public/audios/Wal khat U Hussini Naat sharif.mp3",
+  },
+  { location: "../../public/audios/Ye Duniya Chor Di Humne.mp3" },
 ];
 
 export const BodyVideo = "https://www.youtube.com/watch?v=STpHs6Ye4NM";
