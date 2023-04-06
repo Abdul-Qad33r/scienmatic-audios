@@ -1,16 +1,14 @@
-export const Background = "../../public/images/background-tile.webp";
-
 // Navbar
 export const LogoImage = "../../public/images/monstercat-logo.webp";
-import { RxHamburgerMenu } from "react-icons/rx";
-export const HamBurger = RxHamburgerMenu;
+import { GiHamburgerMenu } from "react-icons/gi";
+export const Hamburger = GiHamburgerMenu;
 
-import { FaInstagramSquare, FaFacebook } from "react-icons/fa";
-import { SiTiktok, SiPlayerfm } from "react-icons/si";
+import { FaFacebook } from "react-icons/fa";
+import { SiTiktok, SiPlayerfm, SiInstagram } from "react-icons/si";
 import { BsTwitter, BsTwitch } from "react-icons/bs";
 import { RiDiscordFill } from "react-icons/ri";
-export const SocialMediaIcons = [
-  <FaInstagramSquare />,
+export const SocialIcons = [
+  <SiInstagram />,
   <SiTiktok />,
   <BsTwitter />,
   <BsTwitch />,

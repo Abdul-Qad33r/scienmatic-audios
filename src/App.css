@@ -1,4 +1,9 @@
 :root {
   --light: #fdfdfd;
   --gray: #383838;
+  --sublink: #c4c4c4;
+}
+
+.flex {
+  display: flex;
 }
