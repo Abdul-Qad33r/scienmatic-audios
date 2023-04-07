@@ -17,12 +17,36 @@ header.navbar {
   }
 
   .nav__hamburger {
+    flex-direction: column;
+    gap: 3px;
     cursor: pointer;
     border: transparent;
     background: transparent;
     color: inherit;
     font-size: 1.5rem;
     z-index: 11;
+
+    .nav__hamburger--line {
+      width: 25px;
+      height: 4px;
+      background-color: var(--light);
+      border-radius: 100vw;
+      transition: all 0.5s;
+      transform-origin: center;
+    }
+  }
+  .nav__cross {
+    .nav__cross--line2 {
+      scale: 2.5;
+      rotate: 1turn;
+      opacity: 0;
+    }
+    .nav__cross--line1 {
+      transform: rotate(-225deg) translate(10px);
+    }
+    .nav__cross--line3 {
+      transform: rotate(-135deg) translate(10px);
+    }
   }
 
   aside.sidebar {

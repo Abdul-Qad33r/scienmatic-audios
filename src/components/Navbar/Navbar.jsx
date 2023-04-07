@@ -30,10 +30,12 @@ const Navbar = () => {
         <SocialMediaIcons className="nav__mediaIconsList" />
 
         <button
-          className="flex nav__hamburger"
+          className={`flex nav__hamburger ${sidebar && "nav__cross"}`}
           onClick={() => setSidebar((prev) => !prev)}
         >
-          <Hamburger />
+          <div className="nav__hamburger--line nav__cross--line1"></div>
+          <div className="nav__hamburger--line nav__cross--line2"></div>
+          <div className="nav__hamburger--line nav__cross--line3"></div>
         </button>
       </nav>
 
