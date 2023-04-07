@@ -16,29 +16,6 @@ header.navbar {
     aspect-ratio: 1;
   }
 
-  .nav__mediaIconsList {
-    position: absolute;
-    right: 0;
-    top: 100px;
-
-    &:hover .nav__mediaIconsList--item:not(:hover),
-    &:has(.nav__mediaIconsList--item:focus-visible)
-      .nav__mediaIconsList--item:not(:focus-visible) {
-      opacity: 0.5;
-      scale: 0.8;
-    }
-  }
-  .nav__mediaIconsList--item {
-    cursor: pointer;
-    font-size: 1.1rem;
-    padding: calc(var(--icons-padding) / 2);
-    transition: all 500ms ease;
-
-    &:hover {
-      scale: 1.2;
-      rotate: 1turn;
-    }
-  }
   .nav__hamburger {
     cursor: pointer;
     border: transparent;
@@ -64,7 +41,7 @@ header.navbar {
     overflow-y: auto;
     height: 67%;
     padding-block: 2rem;
-    margin-top: 2rem;
+    margin-block: 2rem;
   }
   .sidebar__menu--items--item {
     font-size: 1.3rem;
@@ -82,6 +59,26 @@ header.navbar {
 
     &:hover {
       color: var(--light);
+    }
+  }
+  .signButtons {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+  }
+  .sidebar__signBtn {
+    padding: 0.5rem 1rem;
+  }
+  .sidebar__signInBtn {
+    outline: 2px solid;
+    transition: all 0.5s ease;
+    margin-right: 1rem;
+
+    &:hover,
+    &:focus-visible {
+      outline-offset: -5px;
+      background-color: var(--light);
+      color: black;
     }
   }
 }

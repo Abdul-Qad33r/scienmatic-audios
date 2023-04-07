@@ -2,9 +2,23 @@ import React, { useState } from "react";
 import "./Navbar.scss";
 import { LogoImage, Hamburger, SideMenu, Arrows } from "../../assets/Constants";
 import { SocialMediaIcons } from "../Container";
+import { AnimatePresence, motion } from "framer-motion";
+
+const asideVariants = {
+  initial: {
+    x: "100%",
+    scale: 0,
+  },
+  animate: {
+    x: 0,
+    scale: 1,
+    transition: { duration: 0.3, ease: "easeInOut", type: "spring" },
+  },
+  exit: { x: "-50%", scale: 0 },
+};
 
 const Navbar = () => {
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
 
   return (
     <header className="navbar">
@@ -13,7 +27,7 @@ const Navbar = () => {
           <img src={LogoImage} alt="monstercat" />
         </a>
 
-        <SocialMediaIcons />
+        <SocialMediaIcons className="nav__mediaIconsList" />
 
         <button
           className="flex nav__hamburger"
@@ -23,29 +37,57 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {sidebar && (
-        <aside className="sidebar">
-          <a href="/" className="nav__logo">
-            <img
-              loading="lazy"
-              src="https://cdn.monstercat.com/monstercat-logo-white.svg"
-              alt="monstercat"
-              style={{
-                width: "180px",
-                height: "40.77px",
-              }}
-            />
-          </a>
+      <AnimatePresence mode="wait">
+        {sidebar && (
+          <motion.aside
+            className="sidebar"
+            variants={asideVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            <a href="/" className="nav__logo">
+              <img
+                src="https://cdn.monstercat.com/monstercat-logo-white.svg"
+                alt="monstercat"
+                style={{
+                  width: "180px",
+                  height: "40.77px",
+                }}
+              />
+            </a>
 
-          <div className="sidebar__menu">
-            <ul className="sidebar__menu--items">
-              {SideMenu.map((item, index) => (
-                <SidebarItem item={item} index={index} />
-              ))}
-            </ul>
-          </div>
-        </aside>
-      )}
+            <div className="sidebar__menu">
+              <ul className="sidebar__menu--items">
+                {SideMenu.map((item, index) => (
+                  <SidebarItem item={item} index={index} />
+                ))}
+              </ul>
+            </div>
+
+            <SocialMediaIcons className="flex wrap" />
+
+            <div className="signButtons">
+              <a
+                role="button"
+                href="#"
+                className="sidebar__signBtn sidebar__signInBtn"
+              >
+                SIGN IN
+              </a>
+              OR
+              <a
+                role="button"
+                href="#"
+                className="sidebar__signBtn sidebar__signUpBtn"
+              >
+                SIGN UP
+              </a>
+            </div>
+            {/* After installing react-router-dom these both links will change in to Link element */}
+          </motion.aside>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

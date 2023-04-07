@@ -7,3 +7,6 @@
 .flex {
   display: flex;
 }
+.wrap {
+  flex-wrap: wrap;
+}

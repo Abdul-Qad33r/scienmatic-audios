@@ -1,0 +1,23 @@
+.nav__mediaIconsList {
+  position: absolute;
+  right: 0;
+  top: 100px;
+}
+.socialIcons:hover .socialIcons--item:not(:hover),
+.socialIcons:has(.socialIcons--item:focus-visible)
+  .socialIcons--item:not(:focus-visible) {
+  opacity: 0.5;
+  scale: 0.8;
+}
+.socialIcons--item {
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: calc(var(--icons-padding) / 2);
+  transition: all 500ms ease;
+
+  &:hover,
+  &:focus-visible {
+    scale: 1.2;
+    rotate: 1turn;
+  }
+}

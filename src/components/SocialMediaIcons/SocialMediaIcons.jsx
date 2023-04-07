@@ -2,13 +2,13 @@ import React from "react";
 import "./SocialMediaIcons.scss";
 import { SocialIcons } from "../../assets/Constants";
 
-const SocialMediaIcons = () => {
+const SocialMediaIcons = ({ className }) => {
   return (
-    <ul className="nav__mediaIconsList">
+    <ul className={`socialIcons ${className}`}>
       {SocialIcons.map((icon, index) => (
         <li
           key={`social-media-icon-${index}`}
-          className="nav__mediaIconsList--item"
+          className="socialIcons--item"
           tabIndex="0"
         >
           {icon}
