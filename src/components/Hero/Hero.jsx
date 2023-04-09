@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="hero">
       <div className="hero__background-image"></div>
 
-      <div className="container flex wrap hero__container">
+      <div className="container flex hero__container">
         <div className="hero__left flex">
           <div className="hero__left--text">
             <p>
