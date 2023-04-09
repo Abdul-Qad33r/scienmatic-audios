@@ -2,6 +2,7 @@
   --light: #fdfdfd;
   --gray: #383838;
   --sublink: #c4c4c4;
+  --light-green: #4e997b;
 }
 
 .flex {
@@ -9,4 +10,10 @@
 }
 .wrap {
   flex-wrap: wrap;
+}
+.container {
+  width: 85%;
+  max-width: 1100px;
+  border: 1px solid;
+  margin: auto;
 }

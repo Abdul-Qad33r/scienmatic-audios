@@ -4,6 +4,7 @@ header.navbar {
   padding: 1.5rem 5.7rem;
   --hamburger-padding-right: 0.7rem;
   --icons-padding: 1.2rem;
+  z-index: 100;
 
   nav {
     align-items: center;
@@ -71,6 +72,10 @@ header.navbar {
     font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 17px;
+    align-items: center;
+  }
+  .sidebar__menu--subItems {
+    overflow: hidden;
   }
   .sidebar__menu--subItems--item {
     cursor: pointer;

@@ -62,7 +62,11 @@ const Navbar = () => {
             <div className="sidebar__menu">
               <ul className="sidebar__menu--items">
                 {SideMenu.map((item, index) => (
-                  <SidebarItem item={item} index={index} />
+                  <SidebarItem
+                    item={item}
+                    index={index}
+                    key={`sidebarItem-${item.title}-${index}`}
+                  />
                 ))}
               </ul>
             </div>
@@ -86,36 +90,53 @@ const Navbar = () => {
                 SIGN UP
               </a>
             </div>
-            {/* After installing react-router-dom these both links will change in to Link element */}
+            {/* After installing react-router-dom these both links will change into Link element */}
           </motion.aside>
         )}
       </AnimatePresence>
     </header>
   );
 };
+const subMenuItemsContainer = {
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 
+const subMenuItem = {
+  hidden: { x: "10%", scale: 0 },
+  show: { x: 0, scale: 1 },
+};
 const SidebarItem = ({ item, index }) => {
   const [subMenu, setSubmenu] = useState(false);
   return (
-    <li key={`sidebarItem-${item.title}-${index}`}>
+    <li>
       <button
-        className="sidebar__menu--items--item"
+        className="flex sidebar__menu--items--item"
         onClick={() => setSubmenu((prev) => !prev)}
       >
-        {item.title.toUpperCase()}
+        {item.title.toUpperCase()}{" "}
+        {item.submenu && (subMenu ? Arrows.up : Arrows.down)}
       </button>
-
       {item.submenu && subMenu && (
-        <ul className="sidebar__menu--subItems">
+        <motion.ul
+          className="sidebar__menu--subItems"
+          variants={subMenuItemsContainer}
+          initial="hidden"
+          animate="show"
+        >
           {item.submenu.map((subItem, subIndex) => (
-            <li
+            <motion.li
+              variants={subMenuItem}
               className="sidebar__menu--subItems--item"
               key={`sidebarSubItem-${subItem}-${subIndex}`}
             >
               {subItem.toUpperCase()}
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       )}
     </li>
   );
