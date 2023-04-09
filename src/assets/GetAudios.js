@@ -4,7 +4,6 @@ var fileNames = fs.readdirSync("../../public/audios");
 const Audios = [];
 
 fileNames.map((element) => {
-  const myObj = { location: `/audios/${element}` };
-  Audios.push(myObj);
+  Audios.push(element);
 });
 console.log(Audios);

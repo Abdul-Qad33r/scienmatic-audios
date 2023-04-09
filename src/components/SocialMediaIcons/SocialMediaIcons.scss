@@ -11,6 +11,7 @@
 }
 .socialIcons--item {
   cursor: pointer;
+  pointer-events: initial;
   font-size: 1.1rem;
   padding: calc(var(--icons-padding) / 2);
   transition: all 500ms ease;

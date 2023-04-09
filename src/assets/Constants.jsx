@@ -66,25 +66,19 @@ export const HeaderImages = {
   webpHD: "/images/image (1).webp",
 };
 
-export const Audios = [
-  { location: "/audios/Assubhu Bada - Naat.mp3" },
-  { location: "/audios/Ban k sayal - Naat.mp3" },
-  { location: "/audios/Bharr do Jholi-Naat.mp3" },
-  {
-    location: "/audios/Ek Tera Ishra Ho Aur Asan Ho Manzil .mp3",
-  },
-  { location: "/audios/Madina Sharif Naat.mp3" },
-  { location: "/audios/Saunadi Arabic Naat.mp3" },
-  {
-    location: "/audios/Subhanallah Walhamdulillah - Naat .mp3",
-  },
-  { location: "/audios/Tajdar E Haram - Atif.mp3" },
-  { location: "/audios/Tajdar-e-Haram - Aatif.mp3" },
-  { location: "/audios/Tajdare Haram Naat.mp3" },
-  {
-    location: "/audios/Wal khat U Hussini Naat sharif.mp3",
-  },
-  { location: "/audios/Ye Duniya Chor Di Humne.mp3" },
+export const AudiosFiles = [
+  "Assubhu Bada - Naat.mp3",
+  "Ban k sayal - Naat.mp3",
+  "Bharr do Jholi-Naat.mp3",
+  "Ek Tera Ishra Ho Aur Asan Ho Manzil .mp3",
+  "Madina Sharif Naat.mp3",
+  "Saunadi Arabic Naat.mp3",
+  "Subhanallah Walhamdulillah - Naat .mp3",
+  "Tajdar E Haram - Atif.mp3",
+  "Tajdar-e-Haram - Aatif.mp3",
+  "Tajdare Haram Naat.mp3",
+  "Wal khat U Hussini Naat sharif.mp3",
+  "Ye Duniya Chor Di Humne.mp3",
 ];
 
 export const BodyVideo = "https://www.youtube.com/watch?v=STpHs6Ye4NM";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.scss";
-import { LogoImage, Hamburger, SideMenu, Arrows } from "../../assets/Constants";
+import { LogoImage, SideMenu, Arrows } from "../../assets/Constants";
 import { SocialMediaIcons } from "../Container";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <nav className="flex">
-        <a href="/" className="nav__logo">
+        <a href="/" className="nav__logo" style={{ pointerEvents: "initial" }}>
           <img src={LogoImage} alt="monstercat" />
         </a>
 

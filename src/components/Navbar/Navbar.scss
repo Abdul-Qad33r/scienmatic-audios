@@ -5,7 +5,7 @@ header.navbar {
   --hamburger-padding-right: 0.7rem;
   --icons-padding: 1.2rem;
   z-index: 100;
-
+  pointer-events: none;
   nav {
     align-items: center;
     justify-content: space-between;
@@ -26,6 +26,7 @@ header.navbar {
     color: inherit;
     font-size: 1.5rem;
     z-index: 11;
+    pointer-events: initial;
 
     .nav__hamburger--line {
       width: 25px;
@@ -60,6 +61,10 @@ header.navbar {
     right: 0;
     top: 0;
     z-index: 10;
+
+    & * {
+      pointer-events: initial;
+    }
   }
 
   .sidebar__menu {
