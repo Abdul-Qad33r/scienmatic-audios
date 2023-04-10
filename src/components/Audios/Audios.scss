@@ -1,4 +1,9 @@
 section.audios {
+  margin-top: 5rem;
+  .audios__heading {
+    font-size: 2.5rem;
+    margin-block: 3rem;
+  }
   .audios__items--item {
     display: grid;
     grid-template-columns: minmax(80px, 1fr) 30px 100fr repeat(2, 1fr);

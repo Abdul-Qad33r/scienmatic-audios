@@ -22,7 +22,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: #000000 url("../public/images/background-tile.webp") repeat;
+  background: #000000 url("/images/background-tile.webp") repeat;
   color: var(--light);
 }
 

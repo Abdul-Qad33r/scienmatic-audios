@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Hero.scss";
 import { AudioIcons, HeaderImages } from "../../assets/Constants";
+import { useStateContext } from "../ContextAPI/StateContext";
 
 const Hero = () => {
+  const { audioPlaying, listenNow } = useStateContext();
+  const listening = () => {
+    let audio = document.querySelector(
+      `[src='../../../public${audioPlaying
+        .replaceAll("%", " ")
+        .replaceAll("20", "")}'`
+    );
+    audio.nextSibling?.nextSibling?.click();
+  };
   return (
     <section className="hero">
       <div className="hero__background-image"></div>
@@ -26,10 +36,15 @@ const Hero = () => {
           </div>
 
           <div className="hero__right__buttons">
-            <button className="hero__right__buttons--listenNow">
-              <span>{AudioIcons.play}</span>LISTEN NOW
+            <button
+              type="button"
+              className="hero__right__buttons--listenNow"
+              onClick={listening}
+            >
+              <span>{listenNow ? AudioIcons.pause : AudioIcons.play}</span>
+              LISTEN NOW
             </button>
-            <button className="hero__right__buttons--share">
+            <button type="button" className="hero__right__buttons--share">
               <span>{AudioIcons.share}</span>SHARE
             </button>
           </div>

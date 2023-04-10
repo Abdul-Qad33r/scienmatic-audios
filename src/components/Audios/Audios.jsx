@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Audios.scss";
 import { AudioIcons, AudiosFiles } from "../../assets/Constants";
+import { useStateContext } from "../ContextAPI/StateContext";
 
 const Audios = () => {
   return (
     <section className="audios">
       <div className="container audios__items">
-        <h1>TRACK LIST</h1>
+        <h1 className="audios__heading">TRACK LIST</h1>
         {AudiosFiles.map((audio, index) => (
           <AudioItem audio={audio} index={index} key={`${index}-${audio}`} />
         ))}
@@ -16,7 +17,6 @@ const Audios = () => {
 };
 
 let lastPlayedAudio;
-// let lastIsPlaying;
 
 const AudioItem = ({ audio, index }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -24,8 +24,17 @@ const AudioItem = ({ audio, index }) => {
   const { play, pause, share } = AudioIcons;
 
   const currentAudio = useRef(null);
+  console.log(currentAudio?.current);
+  const { setAudioPlaying, setListenNow } = useStateContext();
 
   const HandlePlayPause = () => {
+    setListenNow(!isPlaying);
+    setAudioPlaying(
+      currentAudio?.current?.src.slice(
+        currentAudio?.current?.src.indexOf("/audios")
+      )
+    );
+
     lastPlayedAudio && lastPlayedAudio?.pause();
     lastPlayedAudio = currentAudio?.current;
     setIsPlaying((prev) => !prev);
