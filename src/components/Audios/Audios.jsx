@@ -15,6 +15,9 @@ const Audios = () => {
   );
 };
 
+let lastPlayedAudio;
+// let lastIsPlaying;
+
 const AudioItem = ({ audio, index }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState("");
@@ -23,6 +26,8 @@ const AudioItem = ({ audio, index }) => {
   const currentAudio = useRef(null);
 
   const HandlePlayPause = () => {
+    lastPlayedAudio && lastPlayedAudio?.pause();
+    lastPlayedAudio = currentAudio?.current;
     setIsPlaying((prev) => !prev);
     !isPlaying ? currentAudio?.current?.play() : currentAudio.current.pause();
   };
@@ -53,6 +58,15 @@ const AudioItem = ({ audio, index }) => {
     currentAudio?.current?.loadedmetadata,
     currentAudio?.current?.readyState,
   ]);
+  useEffect(() => {
+    const HandleAudioEnded = () => {
+      setIsPlaying(false);
+    };
+    currentAudio.current.addEventListener("ended", HandleAudioEnded);
+    return () =>
+      currentAudio.current.removeEventListener("ended", HandleAudioEnded);
+  }, [currentAudio]);
+
   return (
     <div className="audios__items--item">
       <audio
@@ -62,12 +76,18 @@ const AudioItem = ({ audio, index }) => {
       />
 
       <p className="audio--item--index">{index + 1}</p>
-      <button className="audio--item--playPauseBtn" onClick={HandlePlayPause}>
+      <button
+        type="button"
+        className="audio--item--playPauseBtn"
+        onClick={HandlePlayPause}
+      >
         {isPlaying ? pause : play}
       </button>
       <p className="audio--item--name">{audio.split(".mp3")}</p>
       <p className="audio--item--duration">{!duration ? "00:00" : duration}</p>
-      <button className="audio--item--shareBtn">{share}</button>
+      <button type="button" className="audio--item--shareBtn">
+        {share}
+      </button>
     </div>
   );
 };

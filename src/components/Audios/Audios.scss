@@ -17,8 +17,11 @@ section.audios {
       align-items: center;
       justify-self: flex-end;
       transition: all 0.3s ease;
-
-      &:hover {
+    }
+    &--playPauseBtn,
+    &--shareBtn {
+      &:hover,
+      &:focus-visible {
         scale: 1.2;
       }
     }
@@ -36,9 +39,4 @@ section.audios {
       font-weight: bold;
     }
   }
-}
-audio {
-    width: 100px;
-    aspect-ratio: 1;
-    border: 1px solid white;
 }
