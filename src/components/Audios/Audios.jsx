@@ -37,6 +37,7 @@ const AudioItem = ({ audio, index }) => {
 
     lastPlayedAudio && lastPlayedAudio?.pause();
     lastPlayedAudio = currentAudio?.current;
+
     setIsPlaying((prev) => !prev);
     !isPlaying ? currentAudio?.current?.play() : currentAudio.current.pause();
   };

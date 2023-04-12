@@ -13,6 +13,7 @@ const Hero = () => {
     );
     audio.nextSibling?.nextSibling?.click();
   };
+  
   return (
     <section className="hero">
       <div className="hero__background-image"></div>
