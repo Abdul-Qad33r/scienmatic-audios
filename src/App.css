@@ -5,6 +5,24 @@
   --light-green: #4e997b;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(10, 10, 10);
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgb(22, 19, 20);
+}
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}
+
+body {
+  background: #000000 url("/images/background-tile.webp") repeat;
+  color: var(--light);
+}
+
 .flex {
   display: flex;
 }
