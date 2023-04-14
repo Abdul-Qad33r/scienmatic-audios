@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 import { LogoImage, SideMenu, Arrows } from "../../assets/Constants";
 import { SocialMediaIcons } from "../Container";
@@ -19,6 +19,16 @@ const asideVariants = {
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
+
+  useEffect(() => {
+    if (sidebar) {
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = "8px";
+    } else {
+      document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "0";
+    }
+  }, [sidebar]);
 
   return (
     <header className="navbar">

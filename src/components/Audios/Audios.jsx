@@ -44,6 +44,7 @@ const AudioItem = ({ audio, index, isPlaying, setIsPlaying }) => {
     !allAudioElements.includes(getAudio?.current) &&
       allAudioElements.push(getAudio?.current);
     setAudioPlaying(allAudioElements[0]);
+    lastPlayedAudio = allAudioElements[0];
   }, []);
 
   const HandlePlayPause = () => {
