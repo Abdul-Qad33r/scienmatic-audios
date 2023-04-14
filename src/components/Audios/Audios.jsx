@@ -5,11 +5,21 @@ import { useStateContext } from "../ContextAPI/StateContext";
 
 const Audios = () => {
   const [isPlaying, setIsPlaying] = useState();
+  const [totalLoaded, setTotalLoaded] = useState(10);
+  const [myAudios, setMyAudios] = useState(AudiosFiles.slice(0, totalLoaded));
+
+  const HandleLoadMoreAudios = () => {
+    totalLoaded <= AudiosFiles.length && setTotalLoaded((prev) => prev + 10);
+  };
+
+  useEffect(() => {
+    setMyAudios(AudiosFiles.slice(0, totalLoaded));
+  }, [totalLoaded]);
   return (
     <section className="audios">
       <div className="container audios__items">
         <h1 className="audios__heading">TRACK LIST</h1>
-        {AudiosFiles.map((audio, index) => (
+        {myAudios.map((audio, index) => (
           <AudioItem
             audio={audio}
             index={index}
@@ -18,6 +28,13 @@ const Audios = () => {
             key={`${index}-${audio}`}
           />
         ))}
+        <button
+          type="button"
+          className="audios__loadMoreBtn"
+          onClick={HandleLoadMoreAudios}
+        >
+          Load more
+        </button>
       </div>
     </section>
   );
@@ -88,7 +105,6 @@ const AudioItem = ({ audio, index, isPlaying, setIsPlaying }) => {
     currentAudio?.addEventListener("ended", HandleAudioEnded);
     return () => currentAudio?.removeEventListener("ended", HandleAudioEnded);
   }, [getAudio]);
-
   return (
     <div className="audios__items--item">
       <audio ref={getAudio} src={`/audios/${audio}`} preload="metadata" />

@@ -11,6 +11,8 @@ section.audios {
     align-items: center;
     width: 100%;
     color: var(--sublink);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(rgb(24, 24, 24), 1);
   }
   .audio--item {
     &--index,
@@ -42,6 +44,22 @@ section.audios {
       margin-right: 1rem;
       font-size: 1.2rem;
       font-weight: bold;
+    }
+  }
+  .audios__loadMoreBtn {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    outline: 1px solid white;
+    display: block;
+    margin: auto;
+    margin-top: 3rem;
+    padding: 0.8rem 1.8rem;
+    margin-bottom: 10rem;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: black;
+      background-color: white;
     }
   }
 }

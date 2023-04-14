@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Hero.scss";
 import { AudioIcons, HeaderImages } from "../../assets/Constants";
 import { useStateContext } from "../ContextAPI/StateContext";

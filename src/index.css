@@ -4,25 +4,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 @font-face {
   font-family: "Roboto";
   font-weight: 400;
-  src: url("/public/fonts/roboto-regular-webfont.woff2") format("woff2"),
-    url("/public/fonts/roboto-regular-webfont.woff") format("woff");
+  src: url("/fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("/fonts/roboto-regular-webfont.woff") format("woff");
 }
 @font-face {
   font-family: "Roboto";
   font-weight: 300;
-  src: url("/public/fonts/roboto-light-webfont.woff2") format("woff2"),
-    url("/public/fonts/roboto-light-webfont.woff") format("woff");
+  src: url("/fonts/roboto-light-webfont.woff2") format("woff2"),
+    url("/fonts/roboto-light-webfont.woff") format("woff");
 }
 @font-face {
   font-family: "Roboto";
   font-weight: 900;
-  src: url("/public/fonts/roboto-black-webfont.woff2") format("woff2"),
-    url("/public/fonts/roboto-black-webfont.woff") format("woff");
+  src: url("/fonts/roboto-black-webfont.woff2") format("woff2"),
+    url("/fonts/roboto-black-webfont.woff") format("woff");
 }
 
 body {
