@@ -1,19 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Hero.scss";
 import { AudioIcons, HeaderImages } from "../../assets/Constants";
 import { useStateContext } from "../ContextAPI/StateContext";
 
 const Hero = () => {
-  const { audioPlaying, listenNow } = useStateContext();
-  const listening = () => {
-    let audio = document.querySelector(
-      `[src='../../../public${audioPlaying
-        .replaceAll("%", " ")
-        .replaceAll("20", "")}'`
-    );
-    audio.nextSibling?.nextSibling?.click();
+  const { audioPlaying, heroPlaying, setHeroPlaying } = useStateContext();
+  const HandleListen = () => {
+    !audioPlaying?.paused ? audioPlaying?.pause() : audioPlaying?.play();
+    setHeroPlaying(!audioPlaying?.paused);
   };
-  
+
   return (
     <section className="hero">
       <div className="hero__background-image"></div>
@@ -40,9 +36,9 @@ const Hero = () => {
             <button
               type="button"
               className="hero__right__buttons--listenNow"
-              onClick={listening}
+              onClick={HandleListen}
             >
-              <span>{listenNow ? AudioIcons.pause : AudioIcons.play}</span>
+              <span>{heroPlaying ? AudioIcons.pause : AudioIcons.play}</span>
               LISTEN NOW
             </button>
             <button type="button" className="hero__right__buttons--share">
