@@ -4,11 +4,11 @@ import { Audios, Hero, Navbar } from "./components/Container";
 import { DotLoader } from "react-spinners";
 
 const App = () => {
-  const [check, setCheck] = useState(true);
-  window.onload = () => setCheck(false);
+  const [loading, setLoading] = useState(true);
+  window.onload = () => setLoading(false);
   return (
     <>
-      {check ? (
+      {loading ? (
         <div className="loader">
           <DotLoader speedMultiplier={2} size={150} color="#ded5c6" />
         </div>
