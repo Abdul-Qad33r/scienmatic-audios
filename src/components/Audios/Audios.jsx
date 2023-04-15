@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Audios.scss";
 import { AudioIcons, AudiosFiles } from "../../assets/Constants";
 import { useStateContext } from "../ContextAPI/StateContext";
+import { motion } from "framer-motion";
 
 const Audios = () => {
   const [isPlaying, setIsPlaying] = useState();
@@ -9,7 +10,7 @@ const Audios = () => {
   const [myAudios, setMyAudios] = useState(AudiosFiles.slice(0, totalLoaded));
 
   const HandleLoadMoreAudios = () => {
-    totalLoaded <= AudiosFiles.length && setTotalLoaded((prev) => prev + 10);
+    setTotalLoaded((prev) => prev + 10);
   };
 
   useEffect(() => {
@@ -28,13 +29,15 @@ const Audios = () => {
             key={`${index}-${audio}`}
           />
         ))}
-        <button
-          type="button"
-          className="audios__loadMoreBtn"
-          onClick={HandleLoadMoreAudios}
-        >
-          Load more
-        </button>
+        {totalLoaded < AudiosFiles.length && (
+          <motion.button
+            type="button"
+            className="audios__loadMoreBtn"
+            onClick={HandleLoadMoreAudios}
+          >
+            Load more
+          </motion.button>
+        )}
       </div>
     </section>
   );
@@ -105,23 +108,72 @@ const AudioItem = ({ audio, index, isPlaying, setIsPlaying }) => {
     currentAudio?.addEventListener("ended", HandleAudioEnded);
     return () => currentAudio?.removeEventListener("ended", HandleAudioEnded);
   }, [getAudio]);
+
+  const whileInView = { x: 0, transition: { duration: 0.3 } };
+  const leftVariants = { initial: { x: -150 }, whileInView };
+  const rightVariants = { initial: { x: 100 }, whileInView };
   return (
     <div className="audios__items--item">
       <audio ref={getAudio} src={`/audios/${audio}`} preload="metadata" />
 
-      <p className="audio--item--index">{index + 1}</p>
-      <button
+      <motion.p
+        className="audio--item--index"
+        variants={leftVariants}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true }}
+      >
+        {index + 1}
+      </motion.p>
+      <motion.button
         type="button"
         className="audio--item--playPauseBtn"
         onClick={HandlePlayPause}
+        variants={leftVariants}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true }}
       >
         {!getAudio?.current?.paused ? pause : play}
-      </button>
-      <p className="audio--item--name">{audio.split(".mp3")}</p>
-      <p className="audio--item--duration">{!duration ? "00:00" : duration}</p>
-      <button type="button" className="audio--item--shareBtn">
+      </motion.button>
+      <motion.p
+        className="audio--item--name"
+        variants={leftVariants}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true }}
+      >
+        {getAudio?.current?.paused ? (
+          audio.length > 80 ? (
+            `${audio.slice(0, 80).split(".mp3").join("")}.....`
+          ) : (
+            audio.split(".mp3")
+          )
+        ) : (
+          <marquee behavior="scroll" direction="left">
+            {audio.split(".mp3")}
+          </marquee>
+        )}
+      </motion.p>
+      <motion.p
+        className="audio--item--duration"
+        variants={rightVariants}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true }}
+      >
+        {!duration ? "00:00" : duration}
+      </motion.p>
+      <motion.button
+        type="button"
+        className="audio--item--shareBtn"
+        variants={rightVariants}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true }}
+      >
         {share}
-      </button>
+      </motion.button>
     </div>
   );
 };

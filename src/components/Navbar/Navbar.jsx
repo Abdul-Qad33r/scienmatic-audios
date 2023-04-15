@@ -3,6 +3,7 @@ import "./Navbar.scss";
 import { LogoImage, SideMenu, Arrows } from "../../assets/Constants";
 import { SocialMediaIcons } from "../Container";
 import { AnimatePresence, motion } from "framer-motion";
+import { DotLoader } from "react-spinners";
 
 const asideVariants = {
   initial: {
@@ -19,6 +20,7 @@ const asideVariants = {
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     if (sidebar) {
@@ -40,6 +42,7 @@ const Navbar = () => {
         <SocialMediaIcons className="nav__mediaIconsList" />
 
         <button
+          type="button"
           className={`flex nav__hamburger ${sidebar && "nav__cross"}`}
           onClick={() => setSidebar((prev) => !prev)}
         >
@@ -58,13 +61,20 @@ const Navbar = () => {
             animate="animate"
             exit="exit"
           >
+            <div style={{ marginLeft: "100px", marginTop: "10px" }}></div>
             <a href="/" className="nav__logo">
+              {!imageLoaded && (
+                <span style={{ display: "block", marginLeft: "100px" }}>
+                  <DotLoader speedMultiplier={2} size={24} color="#ded5c6" />
+                </span>
+              )}
               <img
                 src="https://cdn.monstercat.com/monstercat-logo-white.svg"
                 alt="monstercat"
+                onLoad={() => setImageLoaded(true)}
                 style={{
                   width: "180px",
-                  height: "40.77px",
+                  height: `${imageLoaded ? "40.77px" : "0"}`,
                 }}
               />
             </a>
@@ -119,7 +129,7 @@ const subMenuItem = {
   hidden: { x: "10%", scale: 0 },
   show: { x: 0, scale: 1 },
 };
-const SidebarItem = ({ item, index }) => {
+const SidebarItem = ({ item }) => {
   const [subMenu, setSubmenu] = useState(false);
   return (
     <li>
