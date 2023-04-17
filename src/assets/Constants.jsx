@@ -5,7 +5,7 @@ export const Hamburger = GiHamburgerMenu;
 
 import { FaFacebook } from "react-icons/fa";
 import { SiTiktok, SiPlayerfm, SiInstagram } from "react-icons/si";
-import { BsTwitter, BsTwitch } from "react-icons/bs";
+import { BsTwitter, BsTwitch, BsArrowRight, BsShare } from "react-icons/bs";
 import { RiDiscordFill } from "react-icons/ri";
 export const SocialIcons = [
   <SiInstagram />,
@@ -21,6 +21,7 @@ import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from "react-icons/md";
 export const Arrows = {
   up: <MdOutlineArrowDropUp />,
   down: <MdOutlineArrowDropDown />,
+  right: <BsArrowRight />,
 };
 
 export const SideMenu = [
@@ -83,7 +84,6 @@ export const AudiosFiles = [
 
 export const BodyVideo = "https://www.youtube.com/watch?v=STpHs6Ye4NM";
 
-import { BsShare } from "react-icons/bs";
 import { FiPlay, FiPause } from "react-icons/fi";
 export const AudioIcons = {
   share: <BsShare />,

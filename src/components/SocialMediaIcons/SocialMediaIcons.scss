@@ -3,6 +3,8 @@
   right: 0;
   top: 100px;
 }
+.socialIcons {
+}
 .socialIcons:hover .socialIcons--item:not(:hover),
 .socialIcons:has(.socialIcons--item:focus-visible)
   .socialIcons--item:not(:focus-visible) {
@@ -10,6 +12,7 @@
   scale: 0.8;
 }
 .socialIcons--item {
+  --icons-padding: 1.2rem;
   cursor: pointer;
   pointer-events: initial;
   font-size: 1.1rem;

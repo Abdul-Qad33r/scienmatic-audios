@@ -39,6 +39,7 @@ section.audios {
       padding-left: 1rem;
       font-size: 1.2rem;
       font-weight: bolder;
+      margin-right: 10px;
     }
     &--duration {
       margin-right: 1rem;
@@ -46,20 +47,12 @@ section.audios {
       font-weight: bold;
     }
   }
-  .audios__loadMoreBtn {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    outline: 1px solid white;
-    display: block;
-    margin: auto;
-    margin-top: 3rem;
-    padding: 0.8rem 1.8rem;
-    margin-bottom: 10rem;
-    transition: all 0.5s ease-in-out;
-
-    &:hover {
-      color: black;
-      background-color: white;
+}
+@media screen and (max-width: 768px) {
+  section.audios {
+    .audios__heading {
+      font-size: 2rem;
+      margin-block: 2rem;
     }
   }
 }

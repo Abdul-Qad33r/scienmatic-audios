@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { Audios, Hero, Navbar } from "./components/Container";
+import { Audios, Hero, Navbar, Footer, Video } from "./components/Container";
 import { DotLoader } from "react-spinners";
 
 const App = () => {
@@ -17,6 +17,8 @@ const App = () => {
           <Navbar />
           <Hero />
           <Audios />
+          <Video />
+          <Footer />
         </>
       )}
     </>

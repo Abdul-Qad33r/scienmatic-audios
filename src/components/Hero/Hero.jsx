@@ -1,14 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Hero.scss";
 import { AudioIcons, HeaderImages } from "../../assets/Constants";
 import { useStateContext } from "../ContextAPI/StateContext";
+import { DotLoader } from "react-spinners";
 
 const Hero = () => {
-  const { audioPlaying, heroPlaying, setHeroPlaying } = useStateContext();
+  const {
+    audioPlaying,
+    heroPlaying,
+    setHeroPlaying,
+    isLoadingHero,
+    setIsLoadingHero,
+    HandleShare,
+    defaultShareLinkForHero,
+    audioName,
+  } = useStateContext();
+
   const HandleListen = () => {
-    !audioPlaying?.paused ? audioPlaying?.pause() : audioPlaying?.play();
+    setIsLoadingHero(true);
+    !audioPlaying?.paused
+      ? audioPlaying?.pause()
+      : audioPlaying
+          ?.play()
+          .then(() => setIsLoadingHero(false))
+          .catch(() => setIsLoadingHero(false));
     setHeroPlaying(!audioPlaying?.paused);
+    setIsLoadingHero(false);
   };
+
+  useEffect(() => {
+    audioPlaying?.addEventListener("loadstart", () => setIsLoadingHero(true));
+    audioPlaying?.addEventListener("canplay", () => setIsLoadingHero(false));
+  }, [audioPlaying]);
 
   return (
     <section className="hero">
@@ -28,20 +51,34 @@ const Hero = () => {
 
         <div className="hero__right">
           <div className="hero__right--text">
-            <h1>LEVEL DAYS</h1>
-            <h1>CONRO</h1>
+            <h1>{audioName}</h1>
           </div>
 
           <div className="hero__right__buttons">
             <button
               type="button"
-              className="hero__right__buttons--listenNow"
+              className={`hero__right__buttons--listenNow ${
+                heroPlaying ? "hero__right__buttons--listenNow--shake" : ""
+              }`}
               onClick={HandleListen}
             >
-              <span>{heroPlaying ? AudioIcons.pause : AudioIcons.play}</span>
+              <span>
+                {isLoadingHero ? (
+                  <DotLoader speedMultiplier={2} size={15} color="#ded5c6" />
+                ) : heroPlaying ? (
+                  AudioIcons.pause
+                ) : (
+                  AudioIcons.play
+                )}
+              </span>
+              <span className="btn-spanToAnimate"></span>
               LISTEN NOW
             </button>
-            <button type="button" className="hero__right__buttons--share">
+            <button
+              type="button"
+              className="hero__right__buttons--share"
+              onClick={() => HandleShare(`#${defaultShareLinkForHero}`)}
+            >
               <span>{AudioIcons.share}</span>SHARE
             </button>
           </div>

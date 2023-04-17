@@ -11,7 +11,7 @@ const SocialMediaIcons = ({ className }) => {
           className="socialIcons--item"
           tabIndex="0"
         >
-          {icon}
+          <a href="#">{icon}</a>
         </li>
       ))}
     </ul>
