@@ -6,7 +6,7 @@ section.audios {
   }
   .audios__items--item {
     display: grid;
-    grid-template-columns: minmax(80px, 1fr) 30px 100fr repeat(2, 1fr);
+    grid-template-columns: minmax(40px, 1fr) 30px 100fr repeat(2, 1fr);
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -53,6 +53,28 @@ section.audios {
     .audios__heading {
       font-size: 2rem;
       margin-block: 2rem;
+    }
+    .audios__items--item {
+      grid-template-columns: minmax(20px, 1fr) 30px 100fr repeat(2, 1fr);
+    }
+    .audio--item {
+      &--index,
+      &--playPauseBtn,
+      &--shareBtn {
+        padding: 8px 0;
+        font-size: 1rem;
+      }
+      &--name {
+        padding-left: 0.8rem;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-right: 3px;
+      }
+      &--duration {
+        margin-right: 0.4rem;
+        font-size: 1rem;
+        font-weight: 400;
+      }
     }
   }
 }

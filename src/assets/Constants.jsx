@@ -62,7 +62,7 @@ export const SideMenu = [
 // Header
 
 export const HeaderImages = {
-  jpeg: "/images/cover.jpeg",
+  jpg: "/images/cover.jpg",
   webpNormal: "/images/image.webp",
   webpHD: "/images/image (1).webp",
 };

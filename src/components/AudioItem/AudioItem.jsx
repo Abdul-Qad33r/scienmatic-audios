@@ -175,7 +175,7 @@ const AudioItem = ({ audio, audioId, index, isPlaying, setIsPlaying }) => {
       >
         {getAudio?.current?.paused ? (
           audio.length > 80 ? (
-            `${audio.slice(0, 80).split(".mp3").join("")}.....`
+            `${audio.slice(0, 50).split(".mp3").join("")}.....`
           ) : (
             audio.split(".mp3")
           )
