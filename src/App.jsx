@@ -19,6 +19,15 @@ const App = () => {
           <Audios />
           <Video />
           <Footer />
+          <p>
+            This website is the clone of{" "}
+            <a
+              style={{ color: "lightblue" }}
+              href="https://www.monstercat.com/release/MCLP017"
+            >
+              monstercat.com
+            </a>{" "}
+          </p>
         </>
       )}
     </>
