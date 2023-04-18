@@ -192,7 +192,7 @@ const AudioItem = ({ audio, audioId, index, isPlaying, setIsPlaying }) => {
         whileInView="whileInView"
         viewport={{ once: true }}
       >
-        {!currentTime ? duration : currentTime}
+        {!currentTime ? duration || "00:00" : currentTime}
       </motion.p>
       <motion.button
         type="button"

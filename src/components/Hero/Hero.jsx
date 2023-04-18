@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Hero.scss";
-import { AudioIcons, HeaderImages } from "../../assets/Constants";
+import { AudioIcons } from "../../assets/Constants";
 import { useStateContext } from "../ContextAPI/StateContext";
 import { DotLoader } from "react-spinners";
 
@@ -45,7 +45,7 @@ const Hero = () => {
             </p>
           </div>
           <div className="hero__left--img">
-            <img src={HeaderImages.jpg} alt="" />
+            <img src="/images/cover.jpg" alt="" />
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
-import { LogoImage, SideMenu, Arrows } from "../../assets/Constants";
+import { SideMenu, Arrows } from "../../assets/Constants";
 import { SocialMediaIcons } from "../Container";
 import { AnimatePresence, motion } from "framer-motion";
 import { DotLoader } from "react-spinners";
@@ -36,7 +36,7 @@ const Navbar = () => {
     <header className="navbar">
       <nav className="flex">
         <a href="/" className="nav__logo" style={{ pointerEvents: "initial" }}>
-          <img src={LogoImage} alt="monstercat" />
+          <img src="/images/monstercat-logo.webp" alt="monstercat" />
         </a>
 
         <SocialMediaIcons className="nav__mediaIconsList" />
