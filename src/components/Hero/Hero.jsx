@@ -51,7 +51,11 @@ const Hero = () => {
 
         <div className="hero__right">
           <div className="hero__right--text">
-            <h1>{audioName}</h1>
+            <h1>
+              {audioName?.split(" ").length > 5
+                ? `${audioName?.split(" ").slice(0, 5).join(" ")}.....`
+                : audioName}
+            </h1>
           </div>
 
           <div className="hero__right__buttons">

@@ -68,18 +68,19 @@ export const HeaderImages = {
 };
 
 export const AudiosFiles = [
-  "Assubhu Bada - Naat.mp3",
-  "Ban k sayal - Naat.mp3",
-  "Bharr do Jholi-Naat.mp3",
-  "Ek Tera Ishra Ho Aur Asan Ho Manzil .mp3",
-  "Madina Sharif Naat.mp3",
-  "Saunadi Arabic Naat.mp3",
-  "Subhanallah Walhamdulillah - Naat .mp3",
-  "Tajdar E Haram - Atif.mp3",
-  "Tajdar-e-Haram - Aatif.mp3",
-  "Tajdare Haram Naat.mp3",
-  "Wal khat U Hussini Naat sharif.mp3",
-  "Ye Duniya Chor Di Humne.mp3",
+  "Aankhon Mein Teri Full Cover by Janani Sings (I don't believe in soulmates but)-cx4S342UJ4g-160k-1657423545907.mp3",
+  "Ae Dil Hai Mushkil Title Track Full Video - Ranbir, Anushka, AishwaryaArijitPritam-6FURuLYrR_Q-160k-1655540649381.mp3",
+  "Apna Bana Le - Bhediya  Varun Dhawan, Kriti Sanon Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya-ElZfdU54Cp8-160k-1654438185874.mp3",
+  "Arijit Singh  Lambiyaan Si Judaiyaan With Lyrics  Raabta  Sushant Rajput, Kriti Sanon  T-Series-vc-KxBjIbgI-160k-1655540844833.mp3",
+  "Arijit Singh Pachtaoge  Vicky Kaushal, Nora Fatehi Jaani, B Praak, Arvindr Khaira  Bhushan Kumar-PVxc5mIHVuQ-160k-1655605903717.mp3",
+  "Channa Mereya Full Video - ADHMRanbir Kapoor, AnushkaArijit SinghPritamKaran Johar-284Ov7ysmfA-160k-1655605835634.mp3",
+  "Chhod Diya (Lyrics) - Arijit Singh, Kanika Kapoor  Baazaar-KMz2pTfRIxw-160k-1657425047608.mp3",
+  "Hamdard Full Video Song  Ek Villain  Arijit Singh  Mithoon-FJ55SHCzt88-160k-1657245621199.mp3",
+  "Kesariya - Brahmāstra  Ranbir Kapoor  Alia Bhatt  Pritam  Arijit Singh  Amitabh Bhattacharya-BddP6PYo2gs-160k-1655540620380.mp3",
+  "Khamoshiyan (Title Song) Lyrics  Arijit Singh  Rashmi S , Jeet G  Ali Fazal , Sapna P & Gurmeet C-qN88U6ZqR-4-160k-1655540765433.mp3",
+  "Phir Bhi Tumko Chaahunga - Full Song  Arijit Singh  Arjun K & Shraddha K  Mithoon , Manoj M-_iktURk0X-A-160k-1657221388850.mp3",
+  "Shayad - Love Aaj Kal  Kartik  Sara  Arushi  Pritam  Arijit Singh-MJyKN-8UncM-160k-1657245635899.mp3",
+  "Zara Zara Behekta Hai [Cover 2018]  RHTDM  Omkar ft.Aditya Bhardwaj Full Bollywood Music Video-pdoM2FzGoog-160k-1655604243205.mp3",
 ];
 
 export const BodyVideo = "https://www.youtube.com/watch?v=STpHs6Ye4NM";
