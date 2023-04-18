@@ -138,7 +138,7 @@ const AudioItem = ({ audio, audioId, index, isPlaying, setIsPlaying }) => {
   const rightVariants = { initial: { x: 30 }, whileInView };
   return (
     <div className="audios__items--item" id={audioId}>
-      <audio ref={getAudio} src={`/audios/${audio}`} preload="metadata" />
+      <audio ref={getAudio} src={`./audios/${audio}`} preload="metadata" />
 
       <motion.p
         className="audio--item--index"
