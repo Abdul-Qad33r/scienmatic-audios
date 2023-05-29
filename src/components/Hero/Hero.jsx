@@ -45,7 +45,7 @@ const Hero = () => {
             </p>
           </div>
           <div className="hero__left--img">
-            <img src="/images/cover.jpg" alt="" />
+            <img src="../../../public/images/cover.jpg" alt="" />
           </div>
         </div>
 

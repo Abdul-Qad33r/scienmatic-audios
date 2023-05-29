@@ -36,7 +36,10 @@ const Navbar = () => {
     <header className="navbar">
       <nav className="flex">
         <a href="/" className="nav__logo" style={{ pointerEvents: "initial" }}>
-          <img src="/images/monstercat-logo.webp" alt="monstercat" />
+          <img
+            src="../../../public/images/monstercat-logo.webp"
+            alt="monstercat"
+          />
         </a>
 
         <SocialMediaIcons className="nav__mediaIconsList" />
